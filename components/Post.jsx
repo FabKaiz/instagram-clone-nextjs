@@ -17,7 +17,6 @@ const Post = ({ id, username, userImg, img, caption }) => {
       {/* comments */}
 
       <PostInputBox />
-
     </div>
   )
 }
