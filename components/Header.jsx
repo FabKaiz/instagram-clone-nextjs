@@ -20,6 +20,7 @@ const Header = () => {
             alt="logo"
             layout="fill"
             objectFit="contain"
+            priority
           />
         </div>
 
