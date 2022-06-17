@@ -8,10 +8,13 @@ import {
 import { HomeIcon } from '@heroicons/react/solid'
 import { signOut, useSession } from 'next-auth/react'
 import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { modalState } from '../atoms/modalAtom'
 
 const NavMenu = () => {
   const { data: session } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false)
+  const [open, setOpen] = useRecoilState(modalState)
 
   return (
     <div className="flex items-center justify-end space-x-4">
@@ -24,7 +27,7 @@ const NavMenu = () => {
               2
             </div>
           </div>
-          <PlusCircleIcon className="navBtn" />
+          <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn" />
           <UserGroupIcon className="navBtn" />
           <HeartIcon className="navBtn" />
 
