@@ -33,9 +33,9 @@ const Suggestions = () => {
             className="rounded-full border w-10 h-10 p-[2px]"
           />
 
-          <div className="flex-1 ml-4">
+          <div className="flex-1 mx-4">
             <h2 className="font-semibold text-sm">{user.username}</h2>
-            <h3 className="text-xs text-gray-400 troncate">
+            <h3 className="text-xs text-gray-400">
               Followed by {user.connections}
             </h3>
           </div>
