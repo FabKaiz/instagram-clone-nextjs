@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Feed from '../components/Feed'
 import Header from '../components/Header'
+import Modal from '../components/Modal'
 
 const Home = () => {
   const router = useRouter()
@@ -25,6 +26,7 @@ const Home = () => {
         <>
           <Header />
           <Feed />
+          <Modal />
         </>
       )}
     </div>
