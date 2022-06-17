@@ -1,8 +1,15 @@
-import { getProviders, signIn } from 'next-auth/react'
+import { getProviders, signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 import Footer from '../../components/Footer'
 import Welcome from '../../components/Welcome'
 
 const SignIn = ({ providers }) => {
+  const router = useRouter()
+
+  const { data: session } = useSession({})
+
+  if (session) router.push('/')
+
   return (
     <>
       {Object.values(providers).map((provider) => (
