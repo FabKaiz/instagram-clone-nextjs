@@ -2,9 +2,9 @@ import { DotsHorizontalIcon } from '@heroicons/react/outline'
 
 const PostHeader = ({ userImg, username }) => {
   return (
-    <div className="flex items-center p-5">
+    <div className="flex items-center p-3">
       <img
-        className="rounded-full h-12 w-12 object-cover border p-1 mr-3"
+        className="rounded-full h-8 w-8 object-cover mr-3"
         src={userImg}
         alt="user pic"
       />
