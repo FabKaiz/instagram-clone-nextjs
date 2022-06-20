@@ -1,4 +1,18 @@
-# Next.js + Tailwind CSS Example
+# Instagram clone with Next.js, Recoil, Tailwind and Firebase 📸
+
+### 'Fakestagram' made using
+* NextJs
+* Firebase 9
+* Next-auth
+* Recoil
+* Tailwind
+* Tailwind-scrollbar and scrollbar-hide
+* moment
+* Headlessui
+* fakerJs
+
+### Preview :
+![website screenshot](https://i.ibb.co/t3d2GZT/insta-Clone.png)
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
 
