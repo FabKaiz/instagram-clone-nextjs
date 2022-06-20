@@ -14,6 +14,9 @@ const Header = () => {
           onClick={() => router.push('/')}
           className="relative hidden lg:inline-grid w-24 cursor-pointer"
         >
+          <p className="absolute font-bold rounded-md py-[1.4px] px-2 text-white bg-red-500 text-xs z-10 top-2 -left-3 -rotate-12">
+            Fake
+          </p>
           <Image
             src="https://links.papareact.com/ocw"
             alt="logo"
@@ -28,6 +31,9 @@ const Header = () => {
           onClick={() => router.push('/')}
           className="relative w-10 lg:hidden flex-shrink-0 cursor-pointer"
         >
+          <p className="absolute font-bold rounded-md py-[1.4px] px-2 text-white bg-red-500 text-xs z-10 top-1 -left-4 -rotate-12">
+            Fake
+          </p>
           <Image
             src="https://links.papareact.com/jjm"
             alt="logo"
