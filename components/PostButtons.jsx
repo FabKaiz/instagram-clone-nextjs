@@ -5,7 +5,13 @@ import {
   PaperAirplaneIcon,
 } from '@heroicons/react/outline'
 import { HeartIcon as HeartIconFilled } from '@heroicons/react/solid'
-import { collection, deleteDoc, doc, onSnapshot, setDoc } from 'firebase/firestore'
+import {
+  collection,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  setDoc,
+} from 'firebase/firestore'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import { db } from '../firebase'
@@ -51,9 +57,9 @@ const PostButtons = ({ id }) => {
         </div>
         <BookmarkAltIcon className="btn" />
       </div>
-        {likes.length > 0 && (
-          <p className="font-semibold text-sm ml-3">{likes.length} likes</p>
-        )}
+      {likes.length > 0 && (
+        <p className="font-semibold text-sm ml-3">{likes.length} likes</p>
+      )}
     </div>
   )
 }
