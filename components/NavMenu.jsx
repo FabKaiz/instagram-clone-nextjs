@@ -37,6 +37,7 @@ const NavMenu = () => {
               src={session?.user?.image}
               alt="profil pic"
               className=" h-10 w-10 cursor-pointer rounded-full"
+              referrerPolicy="no-referrer"
             />
             {toggleMenu && (
               <div className="absolute z-20 bg-white py-2 px-4 top-11 right-0 border drop-shadow-lg rounded w-36">
