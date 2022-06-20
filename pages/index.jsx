@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="bg-gray-50 h-screen overflow-y-scroll scrollbar-hide">
       <Head>
-        <title>Instagram 2.0 - FabKaiz</title>
+        <title>Fakestagram - FabKaiz</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
