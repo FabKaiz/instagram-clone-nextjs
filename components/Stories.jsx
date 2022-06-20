@@ -18,7 +18,7 @@ const Stories = () => {
   }, [])
 
   return (
-    <div className="flex space-x-3 p-4 bg-white mt-8 border-gray-200 border rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
+    <div className="flex space-x-3 p-4 bg-white mt-8 border-gray-200 border rounded-lg overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
       {session && (
         <div className="relative">
           <Story
