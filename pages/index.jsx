@@ -11,7 +11,7 @@ const Home = () => {
   const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
-      router.push('/auth/signin')
+      // router.push('/auth/signin')
     },
   })
 
@@ -21,10 +21,10 @@ const Home = () => {
         <title>Fakestagram - FabKaiz</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
 
       {session && (
         <>
-          <Header />
           <Feed />
           <Modal />
         </>
