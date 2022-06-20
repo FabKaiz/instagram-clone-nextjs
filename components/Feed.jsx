@@ -2,7 +2,7 @@ import MiniProfile from './MiniProfile'
 import Suggestions from './Suggestions'
 import Posts from './Posts'
 import Stories from './Stories'
-import { getSession, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import Welcome from './Welcome'
 import Footer from './Footer'
 
@@ -11,7 +11,7 @@ const Feed = () => {
 
   return (
     <main
-      className={`grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-6xl mx-auto ${
+      className={`grid grid-cols-1 md:grid-cols-2 md:max-w-2xl xl:grid-cols-3 xl:max-w-3xl mx-auto ${
         !session && '!grid-cols-1 !max-w-3xl'
       }`}
     >
