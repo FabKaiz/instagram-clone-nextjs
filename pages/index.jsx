@@ -11,7 +11,7 @@ const Home = () => {
   const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
-      // router.push('/auth/signin')
+      router.push('/auth/signin')
     },
   })
 
