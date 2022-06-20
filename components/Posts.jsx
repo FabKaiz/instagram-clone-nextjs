@@ -1,37 +1,34 @@
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
+import { useEffect, useState } from 'react'
+import { db } from '../firebase'
 import Post from './Post'
 
-const posts = [
-  {
-    id: '123',
-    username: 'fabkaiz',
-    userImg:
-      'https://images.unsplash.com/photo-1457449940276-e8deed18bfff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=470&q=80',
-    img: 'https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80',
-    caption: 'This is a caption',
-  },
-  {
-    id: '12fdsqff3',
-    username: 'therbob',
-    userImg:
-      'https://images.unsplash.com/photo-1457449940276-e8deed18bfff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=470&q=80',
-    img: 'https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80',
-    caption: 'This is a caption 222222',
-  },
-  {
-    id: '123fdfd',
-    username: 'peorzihtoierh',
-    userImg:
-      'https://images.unsplash.com/photo-1457449940276-e8deed18bfff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=470&q=80',
-    img: 'https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80',
-    caption: 'This is a caption 3',
-  },
-]
-
 const Posts = () => {
+  const [posts, setPosts] = useState([])
+
+  useEffect(
+    () =>
+      onSnapshot(
+        query(collection(db, 'posts'), orderBy('timestamp', 'desc')),
+        (snapshot) => {
+          setPosts(snapshot.docs)
+        }
+      ),
+    [db]
+  )
+
   return (
     <div>
+      {posts.length < 1 && <h2>Loading posts....</h2>}
       {posts.map((post) => (
-        <Post key={post.id} id={post.id} username={post.username} userImg={post.userImg} img={post.img} caption={post.caption} />
+        <Post
+          key={post.id}
+          id={post.id}
+          username={post.data().username}
+          userImg={post.data().profileImg}
+          img={post.data().image}
+          caption={post.data().caption}
+        />
       ))}
     </div>
   )
