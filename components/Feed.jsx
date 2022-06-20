@@ -11,7 +11,7 @@ const Feed = () => {
 
   return (
     <main
-      className={`grid grid-cols-1 md:grid-cols-2 md:max-w-2xl xl:grid-cols-3 xl:max-w-3xl mx-auto ${
+      className={`grid grid-cols-1 md:grid-cols-2 max-w-lg xl:grid-cols-3 xl:max-w-3xl mx-auto ${
         !session && '!grid-cols-1 !max-w-3xl'
       }`}
     >

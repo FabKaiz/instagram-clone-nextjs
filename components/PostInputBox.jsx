@@ -24,7 +24,7 @@ const PostInputBox = ({ id }) => {
 
   return (
     <div>
-      <form className="flex items-center p-4">
+      <form className="flex items-center px-2 py-[5px] border-t border-gray-200 mt-2">
         <EmojiHappyIcon className="h-7 cursor-pointer" />
         <input
           values={comment}
@@ -37,7 +37,7 @@ const PostInputBox = ({ id }) => {
           type="submit"
           disabled={!comment.trim()}
           onClick={sendComment}
-          className="font-semibold text-blue-400"
+          className="font-semibold text-blue-400 disabled:text-blue-100"
         >
           Post
         </button>
