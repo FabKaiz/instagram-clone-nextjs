@@ -5,6 +5,7 @@
 * Firebase 9
 * Next-auth
 * Recoil
+* OAuth 2 with Google
 * Tailwind
 * Tailwind-scrollbar and scrollbar-hide
 * moment
