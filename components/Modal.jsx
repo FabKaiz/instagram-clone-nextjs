@@ -2,7 +2,7 @@ import { useRecoilState } from 'recoil'
 import { modalState } from '../atoms/modalAtom'
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useRef, useState } from 'react'
-import { CameraIcon } from '@heroicons/react/solid'
+import { CameraIcon, InformationCircleIcon } from '@heroicons/react/solid'
 import { db, storage } from '../firebase'
 import {
   addDoc,
@@ -157,12 +157,19 @@ const Modal = () => {
                 <div className="mt-5 sm:mt-6">
                   <button
                     type="button"
-                    disabled={!selectedFile}
+                    disabled
                     onClick={uploadPost}
                     className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-800 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:text-sm disabled:bg-gray-300 disabled:cursor-not-allowed hover:disabled:bg-gray-300"
                   >
-                    {isLoading ? 'Uploading Post...' : 'Upload Post'}
+                    {/* {isLoading
+                      ? 'Uploading Post...'
+                      : "Upload Post"} */}
+                      Can't upload at the moment
                   </button>
+                  <p className="flex items-center justify-center text-center pt-2">
+                    <InformationCircleIcon className="h-5 w-5 mr-1 text-gray-500" />
+                    Database is locked, try again later
+                  </p>
                 </div>
               </div>
             </div>
